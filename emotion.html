@@ -1,0 +1,53 @@
+<!-- emotion.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Your Emotion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("/static/emo.png") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .emotion-container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #00796b;
+    }
+    .emotion-btn {
+      margin: 10px;
+      font-size: 1.25rem;
+      padding: 15px 30px;
+      border-radius: 20px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="emotion-container">
+    <h2>How are you feeling right now?</h2>
+    <form action="/counsel" method="POST">
+      <input type="hidden" name="source" value="manual">
+      <button type="submit" name="emotion" value="Happy" class="btn btn-warning emotion-btn">Happy</button>
+      <button type="submit" name="emotion" value="Sad" class="btn btn-info emotion-btn">Sad</button>
+      <button type="submit" name="emotion" value="Angry" class="btn btn-danger emotion-btn">Angry</button>
+      <button type="submit" name="emotion" value="Scared" class="btn btn-secondary emotion-btn">Scared</button>
+      <button type="submit" name="emotion" value="Numb" class="btn btn-dark emotion-btn">I don't know</button>
+    </form>
+  </div>
+</body>
+</html>

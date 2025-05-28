@@ -1,0 +1,51 @@
+<!-- counseling.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Counseling</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("/static/hug.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .counseling-container {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1.emotion {
+      font-size: 2.5rem;
+      color: #00796b;
+      margin-bottom: 30px;
+    }
+    .tip-box p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="counseling-container">
+    <h1 class="emotion">You’re feeling: <strong>{{ emotion }}</strong></h1>
+    <div class="tip-box">
+      {% for tip in tips %}
+        <p>{{ tip }}</p>
+      {% endfor %}
+    </div>
+    <a href="/" class="btn btn-outline-primary btn-lg">Try Again</a>
+  </div>
+</body>
+</html>
